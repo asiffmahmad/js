@@ -23,4 +23,3 @@ console.log("After adding a fruit:", fruits);
 const removedFruit = fruits.pop();
 console.log("Removed fruit:", removedFruit);
 console.log("After removing a fruit:", fruits);
-
