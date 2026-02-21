@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <ul id = "myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h1 id="heading">Hello, World!</h1>
+    <button id="changeText">Change Text</button>
+
+    <script>
+
+        const array = document.getElementById('myList').children;
+
+        Array.from(array).forEach(element => {
+            console.log(element.textContent);
+        });
+        // Get the button and heading elements
+        const button = document.getElementById('changeText');
+        const heading = document.getElementById('heading');
+
+        // Add a click event listener to the button
+        button.addEventListener('click', () => {
+            // Change the text of the heading
+            heading.textContent = 'Text Changed!';
+        });
+    </script>
+    
+</body>
+</html>
