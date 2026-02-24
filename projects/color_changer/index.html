@@ -6,24 +6,25 @@
     <title>ColorChanger</title>
 </head>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const buttons = document.querySelectorAll('button');
+
+<body style="background-color: #292727; font-style: italic; color: white; text-align: center; padding-top: 50px; font-weight: 100;">
+    <h1>Color Changer</h1>
+    <p>Click the button to change the background color!</p>
+    <button style="background-color: #d61515; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: 100px;" class="colorButton">Change Color 1 </button>
+    <button style="background-color: #0f1cdb; color: white; border: none; padding: 10px 20px; cursor: pointer;" class="colorButton">Change Color 2 </button>
+    <button style="background-color: #e25e0b; color: white; border: none; padding: 10px 20px; cursor: pointer;" class="colorButton">Change Color 3 </button>
+    <button style="background-color: #13dc60; color: white; border: none; padding: 10px 20px; cursor: pointer;" class="colorButton">Change Color 4 </button>
+    <button style="background-color: #e5e50b; color: white; border: none; padding: 10px 20px; cursor: pointer;" class="colorButton">Change Color 5 </button>
+    
+
+    <script>
+        const buttons = document.querySelectorAll('.colorButton');
+        console.log(buttons);
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 document.body.style.backgroundColor = button.style.backgroundColor;
             });
         });
-    });
-</script>
-<body style="background-color: #292727; font-style: italic; color: white; text-align: center; padding-top: 50px; font-weight: 100;">
-    <h1>Color Changer</h1>
-    <p>Click the button to change the background color!</p>
-    <button style="background-color: #d61515; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: 100px;" id="colorButton">Change Color 1 </button>
-    <button style="background-color: #0f1cdb; color: white; border: none; padding: 10px 20px; cursor: pointer;" id="colorButton">Change Color 2 </button>
-    <button style="background-color: #e25e0b; color: white; border: none; padding: 10px 20px; cursor: pointer;" id="colorButton">Change Color 3 </button>
-    <button style="background-color: #13dc60; color: white; border: none; padding: 10px 20px; cursor: pointer;" id="colorButton">Change Color 4 </button>
-    <button style="background-color: #e5e50b; color: white; border: none; padding: 10px 20px; cursor: pointer;" id="colorButton">Change Color 5 </button>
-    
+    </script>
 </body>
 </html>
