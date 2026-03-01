@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess the Number</h1>
+    <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+    <input type="number" id="guess" placeholder="Enter your guess">
+    <button onclick="checkGuess()" id="submit">Submit</button>
+    <p id="result"></p>
+    <p id="attempts"></p>
+    <p id="previousGuesses"></p>
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+       // console.log('Random Number (for testing):', randomNumber); // You can remove this line in production
+
+        var attempts = 3;
+        const previousGuesses = [];
+        const resultElement = document.getElementById('result');
+        const attemptsElement = document.querySelector('#attempts');
+        const previousGuessesElement = document.querySelector('#previousGuesses');
+         attemptsElement.textContent = `Attempts Remaining: ${attempts}`;
+         previousGuessesElement.textContent = `Previous Guesses: ${previousGuesses.join(', ')}`;
+
+        function checkGuess() {
+            const userGuess = parseInt(document.getElementById('guess').value);
+
+            if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+                resultElement.textContent = 'Please enter a valid number between 1 and 100.';
+                document.querySelector('#submit').disabled = true;
+                return;
+            }
+
+             attempts--;
+            attemptsElement.textContent = `Attempts Remaining: ${attempts}`;
+            previousGuesses.push(userGuess);
+            previousGuessesElement.textContent = `Previous Guesses: ${previousGuesses.join(', ')}`;
+            if (userGuess === randomNumber) {
+                resultElement.textContent = 'Congratulations! You guessed the number!';
+            } else if (userGuess < randomNumber) {
+                resultElement.textContent = 'Too low! Try again.';
+            } else {
+                resultElement.textContent = 'Too high! Try again.';
+            }
+
+            if(attempts === 0 && userGuess !== randomNumber) {
+                resultElement.textContent = `Game Over! The number was ${randomNumber}.`;
+                document.querySelector('#submit').disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
