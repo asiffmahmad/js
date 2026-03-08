@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body style="background-color: #414141; color: white; font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+    <div>
+<ul>
+
+    // add actual events here, with actual images and descriptions
+   <li style="background-color: blue; padding: 20px;" id ="blue" ></li>
+   <li style="background-color: green; padding: 20px;" id ="green" ></li>
+   <li style="background-color: red; padding: 20px;" id ="red" ></li>
+
+    </div>
+</body>
+<script>
+
+document.getElementById('red').addEventListener('click', function() {
+    alert('Red event clicked!');
+});
+
+document.getElementById('blue').addEventListener('click', function() {
+    alert('Blue event clicked!');
+});
+
+document.getElementById('green').addEventListener('click', function() {
+    alert('Green event clicked!');
+});
+
+
+
+
+</script>
+</html>
